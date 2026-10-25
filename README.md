@@ -6,6 +6,8 @@ It addresses a common failure in agent-assisted development: code is written, a 
 
 This skill connects requirements and risks to design decisions, meaningful checks, observed results, and an explicitly bounded conclusion. It scales the work to the project, authorized scope, and consequence of failure. It does not certify software or guarantee that defects are absent.
 
+**[Explore the interactive workflow](https://leonardwongly.github.io/sdlc-assurance/)** before installing. Browse lifecycle stages, risk tiers, test assurance, and completion evidence.
+
 ## Install
 
 Requires Node.js and npm. The verified CLI version, `skills@1.7.4`, requires Node.js 22.20.0 or later. Run this from the project where you want the skill installed:
@@ -137,9 +139,11 @@ For example, “implemented; real-database validation blocked” is an honest pa
 - [Reusable assurance record](skills/sdlc-assurance/assets/assurance-record.md), using only the sections the task needs
 - [Worked examples](skills/sdlc-assurance/references/worked-example.md), explicitly illustrative rather than executed results
 - [Sources and domain limits](skills/sdlc-assurance/references/sources.md)
-- [Interactive visual guide](skills/sdlc-assurance/assets/lifecycle-guide.html)
+- [Live interactive visual guide](https://leonardwongly.github.io/sdlc-assurance/) ([HTML source](skills/sdlc-assurance/assets/lifecycle-guide.html))
 
-The visual-guide link opens the HTML source on GitHub, not a live preview. Download or clone the repository and open `skills/sdlc-assurance/assets/lifecycle-guide.html` in a browser. Its stages and controls explain the workflow; they are not live project status or execution evidence.
+Explore the guide on GitHub Pages without installing anything. For offline use, download or clone the repository and open `skills/sdlc-assurance/assets/lifecycle-guide.html` in a browser. Its stages and controls explain the workflow; they are not live project status or execution evidence.
+
+The Pages workflow validates the package and generates the site from the same HTML included in the skill. Hosted reference links open the corresponding documents on GitHub; offline links remain local. Changes to the guide on `main` automatically republish the site.
 
 ## Validate this package
 
