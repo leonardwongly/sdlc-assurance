@@ -1,0 +1,32 @@
+name: Validate skill package
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  package-and-install:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '22'
+      - name: Validate package and links
+        run: python3 scripts/validate.py
+      - name: Test skills install in an isolated project
+        env:
+          DISABLE_TELEMETRY: '1'
+        shell: bash
+        run: |
+          set -euo pipefail
+          install_dir=$(mktemp -d)
+          trap 'rm -rf "$install_dir"' EXIT
+          cd "$install_dir"
+          npx --yes skills@1.7.4 install "$GITHUB_WORKSPACE" --skill sdlc-assurance --agent codex --copy --yes
+          python3 "$GITHUB_WORKSPACE/scripts/validate.py" --installed "$install_dir/.agents/skills/sdlc-assurance"

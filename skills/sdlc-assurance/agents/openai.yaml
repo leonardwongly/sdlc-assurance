@@ -1,0 +1,4 @@
+interface:
+  display_name: "SDLC Assurance"
+  short_description: "Project-aware design, testing, and completion checks"
+  default_prompt: "Use $sdlc-assurance to understand this project, design custom UI where relevant, validate behavior and test quality, and check all requested outcomes before claiming completion."
